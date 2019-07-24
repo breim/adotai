@@ -11,6 +11,7 @@ class ContactMailer < ApplicationMailer
   def sended(contact)
     @contact = contact
     mail({
+        from: @contact.email,
         to: 'contato@adotaai.com',
         subject: "Novo e-mail enviado por #{@contact.name}"
          })

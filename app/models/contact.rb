@@ -5,6 +5,8 @@ class Contact < Object
 	include ActiveModel::Validations
 	include MailerInterfaceable
 
+	attr_accessor :name, :phone, :email, :subject, :message
+
 	def initialize(params = {})
 		@name    = params[:name]
 		@email   = params[:email]
