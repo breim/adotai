@@ -72,6 +72,8 @@ group :development, :test do
   gem 'bullet'
   # Use letter_opener as mail preview
   gem 'letter_opener'
+  # Use rails-erd as erd diagram
+  gem 'erd'
 end
 
 group :development do

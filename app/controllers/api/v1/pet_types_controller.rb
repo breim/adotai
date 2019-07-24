@@ -12,7 +12,7 @@ module API
 
 			def show
 				pet_races = @pet.pet_races
-				render json: {data: pet_races: status: 200}
+				render json: {data: pet_races, status: 200}
 			end
 
 			private
