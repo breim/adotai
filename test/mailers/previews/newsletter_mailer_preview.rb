@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 # Preview all emails at http://localhost:3000/rails/mailers/newsletter_mailer
 class NewsletterMailerPreview < ActionMailer::Preview
-
   # Preview this email at http://localhost:3000/rails/mailers/newsletter_mailer/signup
   def signup
     NewsletterMailer.signup
@@ -10,5 +11,4 @@ class NewsletterMailerPreview < ActionMailer::Preview
   def cancel
     NewsletterMailer.cancel
   end
-
 end
