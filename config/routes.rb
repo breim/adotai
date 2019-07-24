@@ -42,7 +42,6 @@ Rails.application.routes.draw do
 	# @implemented
 	scope :dashboard do
 		resources :categories
-
     resources :pets
 		resources :users
 		resources :profile

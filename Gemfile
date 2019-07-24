@@ -70,6 +70,8 @@ group :development, :test do
   gem 'brakeman'
   # Use bullet to solve n+1 query issues
   gem 'bullet'
+  # Use letter_opener as mail preview
+  gem 'letter_opener'
 end
 
 group :development do
