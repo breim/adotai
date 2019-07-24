@@ -34,8 +34,9 @@ Rails.application.routes.draw do
 	# Application
 	# url => http://adotaai.com
 	# @implemented	
-	root  to: 'home#index'
-	resources :contact, only: [:create]
+	root to: 'home#index'
+	resources :newsletters, only: [:create, :destroy]
+  resources :contact, only: [:create]
 
 	# Dashboard
 	# url => http://dashboard.adotaai.com
