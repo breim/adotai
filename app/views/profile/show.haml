@@ -1,0 +1,26 @@
+= provide :title, "Perfil de #{@profile.name}"
+
+.container
+	.row
+		.col-md-12
+
+			.field
+				%label{class: 'bold'} Avatar
+				= @profile.avatar
+			.field
+				%label{class: 'bold'} Bio
+				= @profile.bio
+			.field
+				%label{class: 'bold'} Data de nascimento
+				= @profile.birthdate
+			.field
+				%label{class: 'bold'} Genero
+				= @profile.gender
+			.field
+				%label{class: 'bold'} Estado
+				= # @profile.state.name
+			.field
+				%label{class: 'bold'} Cidade
+				= # @profile.city.name
+			.actions
+				= link_to 'Editar', edit_profile_path(@profile)

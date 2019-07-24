@@ -1,0 +1,23 @@
+= provide :title, @category.name
+
+.container
+	.row
+		.col-md-12
+
+
+			.field
+				%label{class: 'bold'} Nome
+				= @category.name
+			.field
+				%label{class: 'bold'} Descrição
+				= @category.description
+			.field
+				%label{class: 'bold'} Tags
+				= @category.tags
+			.field
+				%label{class: 'bold'} Categoria
+				= @category.category.name
+
+			.actions
+				= link_to 'Voltar', categories_path
+				= link_to 'Editar', edit_category_path(@category)

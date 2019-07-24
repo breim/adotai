@@ -1,0 +1,29 @@
+= form_for profile do |f|
+	= render 'shared/errors', model: profile
+
+	.field
+		= f.label :name, 'Nome'
+		= f.text_field :name, class: 'form-control', required: 'required',
+		placeholder: 'Digite o nome', autocomplete: 'off'
+	.field
+		= f.label :bio, 'Bio'
+		= f.text_area :bio, class: 'form-control', required: 'required',
+		placeholder: 'Digite a bio', autocomplete: 'off'
+	.field
+		= f.label :birthdate, 'Data de Nascimento'
+		= f.date_field :birthdate, class: 'form-control', required: 'required',
+		placeholder: 'Digite a data de nascimento', autocomplete: 'off'
+	.field
+		= f.label :gender, 'Genero'
+		= f.select :gender, {'Masculino' => 'Masculino', 'Feminino' => 'Feminio'},
+		{prompt: 'Selecionar Genero'}, {class: 'form-control', required: 'required'}
+	.field
+		= f.label :state_id, 'Estado'
+		= f.collection_select(:state_id, State.order(name: :asc), :id, :name, 
+		{prompt: 'Selecionar Estado'}, {class: 'form-control', required: 'required'})
+	.field
+		= f.label :city_id, 'Cidade'
+		= f.collection_select(:city_id, City.order(name: :asc), :id, :name,
+		{prompt: 'Selecionar Cidade'}, {class: 'form-control', required: 'required'})
+	.actions
+		= f.submit nil, class: 'btn btn-primary btn-lg top'

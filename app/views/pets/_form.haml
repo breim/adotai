@@ -1,0 +1,48 @@
+= form_for pet, multipart: true do |f|
+	= render 'shared/errors', model: pet
+
+	.field
+		= f.label :picture, 'Foto'
+		= f.file_field :picture
+	.field
+		= f.label :name, 'Nome'
+		= f.text_field :name, class: 'form-control', required: 'required',
+		placeholder: 'Digite o nome', autocomplete: 'off'
+	.field
+		= f.label :birthdate, 'Data de Nascimento'
+		= f.date_field :birthdate, class: 'form-control', required: 'required',
+		placeholder: 'Digite a data de nascimeto', autocomplete: 'off'
+	.field
+		= f.label :pet_type_id, 'Tipo'
+		= f.collection_select(:pet_type_id, PetType.all, :id, :name, 
+		{prompt: 'Selecionar Tipo'}, {class: 'form-control', required: 'required'})
+	.field
+		= f.label :pet_race_id, 'Raça'
+		= f.collection_select(:pet_race_id, PetRace.all, :id, :name,
+		{prompt: 'Selecionar Raça'}, {class: 'form-control', required: 'required'})
+	.field
+		= f.label :size, 'Porte'
+		= f.select(:size, {'Pequeno' => 'Pequeno', 'Médio' => 'Médio', 'Grande' => 'Grande'},
+		{prompt: 'Selecionar Porte'}, {class: 'form-control', required: 'required'})
+	.field
+		= f.label :gender, 'Genero'
+		= f.select(:gender, {'Masculino' => 'Masculino', 'Feminino' => 'Feminino'},
+		{prompt: 'Selecionar Genero'}, {class: 'form-control', required: 'required'})
+	.field
+		= f.label :vacined, 'Vacinado'
+		= f.check_box :vacined
+	.field
+		= f.label :castred, 'Castrado'
+		= f.check_box :castred
+	.field
+		= f.label :vermifuged, 'Vermifugado'
+		= f.check_box :vermifuged
+	.field
+		= f.label :chiped, 'Chipado'
+		= f.check_box :chiped
+	.field
+		= f.label :description, 'Descrição'
+		= f.text_area :description, class: 'form-control', required: 'required',
+		placeholder: 'Digite a descrição', autocomplete: 'off'
+	.actions
+		= f.submit nil, class: 'btn btn-primary btn-lg top'

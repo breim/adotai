@@ -1,0 +1,15 @@
+%DOCTYPE
+	%html
+		%head
+			%title adotaAi - #{yield :title}
+			%meta{'charset': 'UTF-8'}
+			= csrf_meta_tags
+			= csp_meta_tag
+			= stylesheet_link_tag 'application', media: :all, 'data-turbolinks-track': 'reload'
+			= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+			%style{type: 'text/stylesheet'}= yield :css
+			%script{type: 'text/javascript'}= yield :js
+		%body{class: "#{controller.controller_name}"}
+			= yield
+
+

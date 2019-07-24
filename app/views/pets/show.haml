@@ -1,0 +1,42 @@
+= provide :title, "#{@pet.name}"
+
+.container
+	.row
+		.col-md-12
+
+			.field
+				%label{class: 'bold'} Nome
+				= @pet.name
+			.field
+				%label{class: 'bold'} Data de nascimento
+				= @pet.birthdate
+			.field
+				%label{class: 'bold'} Tipo
+				= @pet.pet_type.name
+			.field
+				%label{class: 'bold'} Raça
+				= @pet.pet_race.name
+			.field
+				%label{class: 'bold'} Tamanho
+				= @pet.size
+			.field
+				%label{class: 'bold'} Genero
+				= @pet.gender
+			.field
+				%label{class: 'bold'} Vacinado
+				= @pet.gender
+			.field
+				%label{class: 'bold'} Castrado
+				= @pet.castred
+			.field
+				%label{class: 'bold'} Vermifugado
+				= @pet.vermifuged
+			.field
+				%label{class: 'bold'} Chipado
+				= @pet.chiped
+			.field
+				%label{class: 'bold'} Descrição
+				= @pet.description
+			.actions
+				= link_to 'Voltar', pets_path
+				= link_to 'Editar', edit_pet_path(@pet)
