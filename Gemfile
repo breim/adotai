@@ -58,6 +58,7 @@ group :development, :test do
   gem 'simplecov'
   # Use rubocop as code quality
   gem 'rubocop'
+  gem 'rubocop-performance'
   # Use rails_best_practices as rails best practices
   gem 'rails_best_practices'
   # Use draper as pattern
