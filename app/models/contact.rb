@@ -3,6 +3,7 @@
 class Contact < Object
 	include ActiveModel::Conversion
 	include ActiveModel::Validations
+	include MailerInterfaceable
 
 	def initialize(params = {})
 		@name    = params[:name]
@@ -10,6 +11,11 @@ class Contact < Object
 		@phone   = params[:phone]
 		@subject = params[:subject]
 		@message = params[:message]
+	end
+
+	def sendEmail
+		send_email ContactMailer, :sended, self, :deliver_now
+		send_email ContactMailer, :received, self, :deliver_now
 	end
 
 	def persisted?
